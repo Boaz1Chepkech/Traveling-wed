@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation Search</title>
+    <link rel="stylesheet" href="accomodation.css">
+    <script src="" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Find Your Perfect Accommodation</h1>
+    </header>
+
+    <!-- Search Filters -->
+    <section class="search-filters">
+        <h2>Search for Accommodations</h2>
+        <form id="accommodationForm">
+            <label for="Location">Location:</label>
+            <input type="text" id="Location" placeholder="Enter location">
+
+            <label for="RoomType">Room Type:</label>
+            <select id="RoomType">
+                <option value="single">Single Room</option>
+                <option value="double">Double Room</option>
+                <option value="suite">Suite</option>
+                <option value="family">Family Room</option>
+            </select>
+
+            <label for="Amenities">Select Amenities:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="wifi" value="wifi">
+                <label for="wifi">Free WiFi</label>
+                <input type="checkbox" id="breakfast" value="breakfast">
+                <label for="breakfast">Breakfast Included</label>
+                <input type="checkbox" id="pool" value="pool">
+                <label for="pool">Swimming Pool</label>
+                <input type="checkbox" id="parking" value="parking">
+                <label for="parking">Free Parking</label>
+            </div>
+
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <!-- Sorting Options -->
+    <section class="sorting-options">
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Rating: High to Low</option>
+        </select>
+    </section>
+
+    <!-- Accommodation Results -->
+    <section class="accommodation-results">
+        <h2>Accommodation Listings</h2>
+
+        <!-- Dynamic Accommodation Cards -->
+        <div id="accommodationList" class="accommodation-list">
+            <!-- Example of a dynamic accommodation card -->
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/holiday-water-nature-blue-luxury.jpg')"></a>
+                <img src="holiday-water-nature-blue-luxury.jpg" alt="5-star hotel" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Luxury Grand Hotel</h3>
+                    <p class="price">$500 per night</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="description">A luxurious experience with all amenities.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-luxury.jpg')"></a>
+                <img src="bangkok-thailand-beautiful-luxury-bedroom-int.jpg" alt="4-star hotel" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Comfort Suites</h3>
+                    <p class="price">$300 per night</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="description">Affordable comfort with great service.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- More accommodation cards will be dynamically loaded -->
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('image2.jpg')"></a>
+                <img src="image2.jpg" alt="Luxury Grand Hotel" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Luxury Grand Hotel</h3>
+                    <p class="price">$500 per night</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="description">A luxurious experience with all amenities including a spa, gym, and fine dining options.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('image1.jpg')"></a>
+                <img src="image1.jpg" alt="Comfort Suites" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Comfort Suites</h3>
+                    <p class="price">$300 per night</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="description">Affordable comfort with great service, close to city attractions and restaurants.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('image3.jpg')"></a>
+                <img src="image3.jpg" alt="Sunny Beach Resort" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Sunny Beach Resort</h3>
+                    <p class="price">$350 per night</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="description">An all-inclusive beach resort with oceanfront views, multiple swimming pools, and water sports.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/view-vibrant-city-night.jpg')"></a>
+                <img src="images/view-vibrant-city-night.jpg" alt="Urban City Hotel" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Urban City Hotel</h3>
+                    <p class="price">$200 per night</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="description">Stay in the heart of the city with easy access to shopping, dining, and nightlife.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/eco-lodge.jpg" alt="Eco Lodge" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Eco Lodge</h3>
+                    <p class="price">$150 per night</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="description">A sustainable, eco-friendly lodge in the mountains, perfect for nature lovers and outdoor enthusiasts.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/luxury-villa.jpg" alt="Luxury Seaside Villa" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Luxury Seaside Villa</h3>
+                    <p class="price">$1,200 per night</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="description">Experience ultimate luxury with a private pool, chef, and beach access in a stunning seaside villa.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/green-forest-cabin.jpg" alt="Forest Retreat Cabin" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Forest Retreat Cabin</h3>
+                    <p class="price">$180 per night</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="description">A cozy cabin nestled in the forest for a peaceful getaway, ideal for relaxation and hiking.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/luxury-penthouse.jpg" alt="Skyline Penthouse" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Skyline Penthouse</h3>
+                    <p class="price">$1,500 per night</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="description">A stunning penthouse with panoramic city views, a private rooftop terrace, and top-tier amenities.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/mountain-chalet.jpg" alt="Mountain Chalet" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Mountain Chalet</h3>
+                    <p class="price">$400 per night</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="description">A charming chalet located in the mountains, offering skiing and snowboarding in winter, and hiking in summer.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/safari-lodge.jpg" alt="Safari Lodge" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Safari Lodge</h3>
+                    <p class="price">$700 per night</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="description">Experience the thrill of a safari with guided tours, luxury tents, and breathtaking wildlife sightings.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/budget-inn.jpg" alt="Budget Inn" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Budget Inn</h3>
+                    <p class="price">$90 per night</p>
+                    <p class="rating">⭐⭐</p>
+                    <p class="description">A budget-friendly inn with basic amenities, ideal for short stays and affordable travel.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/cozy-cottage.jpg" alt="Cozy Cottage" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Cozy Cottage</h3>
+                    <p class="price">$250 per night</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="description">A lovely cottage for a romantic or peaceful retreat, located in a tranquil countryside setting.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/city-apartment.jpg" alt="City Apartment" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>City Apartment</h3>
+                    <p class="price">$120 per night</p>
+                    <p class="rating">⭐⭐⭐</p>
+                    <p class="description">A comfortable apartment for city stays, offering full amenities and close to public transport.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/poolside-resort.jpg" alt="Poolside Resort" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Poolside Resort</h3>
+                    <p class="price">$350 per night</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="description">A tropical resort with an expansive pool area, restaurant, and spa treatments.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/overwater-bungalow.jpg" alt="Overwater Bungalow" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>Overwater Bungalow</h3>
+                    <p class="price">$1,000 per night</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="description">A private overwater bungalow with stunning ocean views, ideal for a romantic getaway.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <a href="javascript:void(0);" onclick="openLightbox('images/bangkok-thailand-august.jpg')"></a>
+                <img src="images/city-loft.jpg" alt="City Loft" class="accommodation-image">
+                <div class="accommodation-info">
+                    <h3>City Loft</h3>
+                    <p class="price">$180 per night</p>
+                    <p class="rating">⭐⭐⭐</p>
+                    <p class="description">A chic urban loft in the heart of the city, ideal for business travelers or short stays.</p>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button class="prev-page">Previous</button>
+            <button class="next-page">Next</button>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal (Hidden by default) -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightboxImage" src="" alt="Enlarged image">
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Accommodation Finder © 2024. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
